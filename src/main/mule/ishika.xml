@@ -18,6 +18,16 @@ output application/java
 ---
 payload]]></ee:set-payload>
 			</ee:message>
+			<ee:variables >
+				<ee:set-variable variableName="counter" ><![CDATA[%dw 2.0
+output application/java
+---
+{
+}]]></ee:set-variable>
+			</ee:variables>
 		</ee:transform>
+		<choice doc:name="Choice" doc:id="6990be92-26b4-4f94-8982-5f25312d73d4" >
+			<when expression="#[vars.counter==1]"/>
+		</choice>
 	</flow>
 </mule>
